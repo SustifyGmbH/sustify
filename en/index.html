@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Sustify</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="js/setLang.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133926968-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-133926968-1", {
+        anonymize_ip: true,
+      });
+
+    </script>
+    <link rel="icon" type="image/png" href="img/sustify-icon.png" />
+    <meta name="description" content="Sustify helps to improve compliance with social and environmental standards by
+        educating the workforce by means of an interactive, gamified learning app pre-installed on tablets." />
+    <meta name="keywords" content="sustify, sustainability, factory, sustainability training, how to improve safety in
+        factories, digital sustainability programs, increase sustainability, Nachhaltigkeit in der Lieferkette, online
+        Training supply chain, Nachhaltigkeitsprogramme, Online Nachhaltigkeitstraining, Training für Arbeiter online,
+        Learning App, Sozialstandards, Brandschutz und Gebäudesicherheit, E-Learning Plattform für Fabriken,
+        Gamifiziertes e-Learning für Nachhaltigkeit, capacity building, Textilindustrie" />
+    <meta name="author" content="Sonja Westphal" />
+    <!-- Search Engine -->
+    <meta name="image" content="https://sustify.de/img/sustify_logo_with%20slogan_rgb.png" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Sustify" />
+    <meta itemprop="description" content="Sustify helps to improve compliance with social and environmental standards by educating the workforce by means of an interactive, gamified learning app pre-installed on tablets." />
+    <meta itemprop="image" content="https://sustify.de/img/sustify_logo_with%20slogan_rgb.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sustify" />
+    <meta name="twitter:description" content="Sustify helps to improve compliance with social and environmental standards by educating the workforce by means of an interactive, gamified learning app pre-installed on tablets." />
+    <meta name="twitter:site" content="@Sustify_Edu" />
+    <meta name="twitter:creator" content="@Sustify_Edu" />
+    <meta name="twitter:image:src" content="https://sustify.de/img/sustify_logo_with%20slogan_rgb.png" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Sustify" />
+    <meta name="og:description" content="Sustify helps to improve compliance with social and environmental standards by educating the workforce by means of an interactive, gamified learning app pre-installed on tablets." />
+    <meta name="og:image" content="https://sustify.de/img/sustify_logo_with%20slogan_rgb.png" />
+    <meta name="og:url" content="https://sustify.de" />
+    <meta name="og:site_name" content="Sustify" />
+    <meta name="og:type" content="website" />
+    <!-- browser caching enabled
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    -->
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme-greensea.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CRubik:300,400,500" rel="stylesheet" type="text/css" />
+    <link href="css/font-rubiklato.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body data-smooth-scroll-offset="77" id="top" x-data="setLang()">
+    <div class="nav-container border">
+      <div class="header-hide">
+        <nav class="bar bar-toggle bar--sm" data-scroll-class="90vh:pos-fixed">
+          <div class="container">
+            <div class="row logo-container">
+              <div class="col-md-2 col-sm-3 col-xs-4 logo-top">
+                <div class="bar__module">
+                  <a href="index.html">
+                    <img class="logo logo-dark" alt="logo" src="img/sustify_logo_with%20slogan_rgb.png" />
+                    <img class="logo logo-light" alt="logo" src="img/sustify_logo_with%20slogan_rgb.png" />
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-10 col-sm-9 col-xs-8">
+                <div class="bar__module pull-right">
+                  <div class="modal-instance">
+                    <span class="lang">
+                      <button @click="toggleDE()" style="padding: 10px; border: none;">
+                        <strong class="de">DEUTSCH</strong>
+                      </button>
+                      <button @click="toggleEN()" style="padding: 10px; border: none;">
+                        <strong class="en">ENGLISH</strong>
+                      </button>
+                    </span>
+                    <a class="modal-trigger menu-toggle" href="#">
+                      <img src="img/hamburger.svg" alt="menu button" style="margin-top: 15px;" />
+                    </a>
+                    <div class="modal-container menu-fullscreen">
+                      <div class="modal-content" data-width="100%" data-height="100%" style="padding-bottom: 6em; background: none;">
+                        <div class="pos-vertical-center pos-asbolute text-center">
+                            <ul class="menu-vertical">
+                              <li class="h2">
+                                <a href="index.html">Home </a>
+                              </li>
+                              <li class="h2">
+                                <a
+                                  href="#whySustify"
+                                  target="_self"
+                                  class="inner-link"
+                                  >Why Sustify</a
+                                >
+                              </li>
+                              <li class="h2">
+                                <a
+                                  href="#sustifyProduct"
+                                  target="_self"
+                                  class="inner-link"
+                                  >Product</a
+                                >
+                              </li>
+                              <li class="h2">
+                                <a
+                                  href="#sustifyCourseLibrary"
+                                  target="_self"
+                                  class="inner-link"
+                                >
+                                  Course library</a
+                                >
+                              </li>
+                              <li class="h2">
+                                <a href="#team" target="_self" class="inner-link"
+                                  >Team</a
+                                >
+                              </li>
+                              <li class="h2">
+                                <a
+                                  href="#contact"
+                                  target="_self"
+                                  class="inner-link"
+                                  >Contact</a
+                                >
+                              </li>
+                              <li class="h2">
+                                <a href="jobs.html" target="_self">Jobs</a>
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <a href="https://www.learntec.de/de/learntec/die-fachmesse/delina-award/index.html#text_preisverleihung" target="_blank">
+      <img src="img/delina-desktop.svg" alt="Sustify is nominated for the Delina Award (Innovationspreis für digitale Bildung)!" class="animated fadeInUp delina-desktop" />
+      <img src="img/delina-mobile.svg" alt="Sustify is nominated for the Delina Award (Innovationspreis für digitale Bildung)!" class="animated fadeInUp delina-mobile" />
+    </a>
+    <div class="main-container">
+      <section class="home switchable space--xs bg--secondary border" style="margin-bottom: -2rem;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-sm-5 col-xs-12 hidden-sm hidden-md hidden-lg" style="margin-top: -15%;">
+              <img alt="Image" src="img/device-2.png" />
+            </div>
+            <div class="col-md-6 col-sm-7">
+              <div class="mt--2">
+                <!--<div class="mt--2">-->
+                <h1 style="font-size: 2.27rem;">
+                  Make your supply chain more sustainable and resilient!
+                </h1>
+                <p class="lead">
+                  Reach each individual in the factory with gamified online
+                    training to make sure that workers and the environment
+                    remain healthy and business can thrive. <br />
+                    Make your impact measurable.
+                </p>
+                <a class="btn btn--primary type--uppercase inner-link" href="#whySustify" target="_self" style="display: none;">
+                  <span class="btn__text">
+                    Know more
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-5 col-xs-12 hidden-xs" style="top: -2rem;">
+              <img id="ipad" class="appear" alt="Image" src="img/device-2.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="imagebg parallax space--lg border hidden-xxs hidden-xs" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/touch-1.jpg" />
+        </div>
+      </section>
+      <section class="imagebg space--lg border hidden-md hidden-sm hidden-lg hidden-xlg" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/touch-1.jpg" />
+        </div>
+      </section>
+      <section class="course-library" id="whySustify">
+        <section class="text-center space--xs bg--primary border">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-10 col-md-10">
+                <h2>
+                  Why Sustify
+                </h2>
+                <p class="lead">
+                  We believe in a bottom-up approach to ensure compliance
+                    beyond auditing. We help to understand, we increase
+                    awareness, and we prepare the grounds for change. We are
+                    digital because it’s a great way to teach and track how well
+                    something is being learnt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Why Sustify -->
+        <section class="text-center space--xs bg--primary border">
+          <div class="container">
+            <div class="row white-box why-sustify-key-points">
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_microlearning.png" alt="Icon for why sustify because it's microlearning" />
+                  </div>
+
+                  <h3>
+                    <span x-show="!de" style="color: #003c41;">Micro-learning</span>
+                    <span x-show="de" style="color: #003c41;">Micro-Learning</span>
+                  </h3>
+                  <p style="color: #648787;">
+                      Content is limited to be relevant to day-to-day factory
+                      life, provided in small “bites”. So Micro-learning is a
+                      skill based learning and education which deals with
+                      relatively small learning units.<
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_personalized.png" alt="Icon for why sustify because it's personalised" />
+                  </div>
+                  <h3 style="color: #003c41;">
+                    Personalized
+                  </h3>
+                  <p style="color: #648787;">
+                    Content adapts accordingly to individual learning
+                      progress, based on an intelligent algorithm respecting
+                      learning methodology of spacing and repetition.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_inclusive.png" alt="Icon for why sustify because it's inclusive" />
+                  </div>
+                  <h3 style="color: #003c41;">
+                    Inclusive
+                  </h3>
+                  <p style="color: #648787;">
+                    Login with face recognition, multilinguality and audio
+                      function make sure, that the entire workforce can be
+                      reached and educated.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_interactive.png" alt="Icon for why sustify because it's interactive" />
+                  </div>
+                  <h3 style="color: #003c41;">
+                    Interactive
+                  </h3>
+                  <p style="color: #648787;">
+                      Different game formats ensure, that learning is done in
+                      different ways, requiring different types of interaction,
+                      which increases retention.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_customizable.png" alt="Icon for why sustify because it's customizable" />
+                  </div>
+                  <h3 style="color: #003c41;">
+                    Customizable
+                  </h3>
+                  <p style="color: #648787;">
+                    Due to the Content Management System, adaptations can
+                      easily be made according to language and industry
+                      requirements.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="why-sustify-point" :class="{ 'whySustifyEN' : !de }">
+                  <div class="why-sustify-point-image">
+                    <img src="img/ic_sustify_measurable.png" alt="Icon for why sustify because it's measurable" />
+                  </div>
+                  <h3 style="color: #003c41;">
+                    Measurable
+                  </h3>
+                  <p style="color: #648787;">
+                    The KPI Dashboard displays demographic data, monitors the
+                      attendance of users and analyzes results (anonymized
+                      averages).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <hr class="white-hr" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="container-fluid">
+                  <div class="row sustify-beneficiaries">
+                    <div class="col-sm-12 col-md-12 title-section">
+                      <h2 class="dark-text text-center" style="color: #003c41;">
+                        Strong global partnerships and cooperation
+                        </span>
+                      </h2>
+                      <div class="row fake-row-to-fix-width">
+                        <p class="col-sm-1 col-md-1"></p>
+                        <p class="lead fixing-width col-sm-10 col-md-10 text-center" style="color: #648787;">
+                          Increasing sustainability in the supply chain is
+                            key to benefitting all stakeholders – people,
+                            business, and our planet. Here is how Sustify
+                            benefits the factory management and employees of
+                            your supply chain in a way that you can truly
+                            measure.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                      <div class="beneficiaries-container">
+                        <svg class="circle-border hide-xs">
+                          <circle cx="50%" cy="50%" r="160px"></circle>
+                        </svg>
+                        <div class="sustify-beneficiary beneficiary-retail-brand">
+                          <div class="beneficiary-icon">
+                            <img class="beneficiary-icon-normal" src="img/sustify_brands.png" alt="sustify is beneficial to brands" />
+                            <img class="beneficiary-icon-active" src="img/sustify_brands_active.png" alt="sustify is beneficial to brands" />
+                          </div>
+                          <h3 style="color: #003c41;">
+                            The brand
+                          </h3>
+                          <div class="beneficiary-details hidden-md-sm-xs">
+                            <ul class="beneficiary-details-points">
+                                <li>
+                                  Decreased risk by supplier management beyond
+                                  auditing
+                                </li>
+                                <li>
+                                  High transparency of trainings through live
+                                  attendance monitoring via the KPI Dashboard
+                                </li>
+                                <li>
+                                  Indicators from trainings can be directly used
+                                  for sustainability reporting
+                                </li>
+                                <li>
+                                  Product can be easily scaled to different
+                                  countries for comprehensive supply chain
+                                  management
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sustify-beneficiary beneficiary-factory-management">
+                          <div class="beneficiary-icon">
+                            <img class="beneficiary-icon-normal" src="img/sustify_factory.png" alt="sustify is beneficial to brands" />
+                            <img class="beneficiary-icon-active" src="img/sustify_factory_active.png" alt="sustify is beneficial to brands" />
+                          </div>
+                          <h3 style="color: #003c41;">The management
+                          </h3>
+                          <div class="beneficiary-details hidden-md-sm-xs">
+                            <ul class="beneficiary-details-points">
+                                <li>More educated and responsible workforce</li>
+                                <li>
+                                  Traceable proof for customers that trainings
+                                  had been conducted
+                                </li>
+                                <li>
+                                  Higher employee retention and therefore
+                                  increased productivity
+                                </li>
+                                <li>
+                                  Easier entry to European markets by showing
+                                  initiative towards a more sustainable
+                                  production
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="sustify-beneficiary beneficiary-factory-employees">
+                          <div class="beneficiary-icon">
+                            <img class="beneficiary-icon-normal" src="img/sustify_workers_green.png" alt="sustify is beneficial to brands" />
+                            <img class="beneficiary-icon-active" src="img/sustify_workers.png" alt="sustify is beneficial to brands" />
+                          </div>
+                          <h3 style="color: #003c41;">The people
+                          </h3>
+                          <div class="beneficiary-details hidden-md-sm-xs">
+                            <ul class="beneficiary-details-points">
+                                <li>Increased knowledge and awareness</li>
+                                <li>Certificate to proof training</li>
+                                <li>Motivation through empowerment</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!--beneficiaries details for tablet displays (992px-650px) -->
+                        <div class="beneficiary-details display-sm">
+                          <ul class="beneficiary-details-points beneficiary-retail-brand active">
+                            <li>Measurable results</li>
+                            <li>Content can be customized to fit needs</li>
+                            <li>Proof for working towards the SDG's</li>
+                            <li>
+                              Key performance indicators can be included in
+                              sustainability reporting
+                            </li>
+                          </ul>
+                          <ul class="beneficiary-details-points beneficiary-factory-management">
+                            <li>
+                              Increased compliance with social and environmental
+                              standards
+                            </li>
+                            <li>Entry to European market</li>
+                            <li>Employee engagement</li>
+                          </ul>
+                          <ul class="beneficiary-details-points beneficiary-factory-employees">
+                            <li>Increased knowledge and awareness</li>
+                            <li>Certificate to prove training</li>
+                            <li>Motivation through empowerment</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </section>
+      </section>
+      <section class="imagebg parallax space--lg border hidden-xxs hidden-xs" data-overlay="0" style="width: 100vw;">
+        <div class="background-image-holder">
+          <img alt="man in hazmat suit in factory" src="img/hazmat-suit-cropped.jpeg" />
+        </div>
+      </section>
+      <section class="imagebg space--lg border hidden-md hidden-sm hidden-lg hidden-xlg" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="man in hazmat suit in factory" src="img/hazmat-suit-cropped.jpeg" />
+        </div>
+      </section>
+      <section class="sustify-product-section bg--secondary" id="sustifyProduct">
+        <section class="text-center space--xxs border" id="benefits">
+          <div class="container">
+            <div class="row how-sustify-works-section">
+              <div class="col-sm-12 col-md-12">
+                <h2>
+                  Product
+                </h2>
+                <p class="lead extra-bottom-margin">
+                  Sustify is a scalable and measurable training solution for
+                    capacity building in factories. It can be used to provide
+                    basic knowledge especially when classroom trainings can't be
+                    conducted because of epidemic-related regulations enforcing
+                    social distancing, it can be integrated into existing
+                    programs, or it can be used to refresh knowledge and
+                    awareness at regular intervals.
+                </p>
+              </div>
+              <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_tablets-included.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      On tablets
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-5">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_personal-login.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      Individual Login
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_duration.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      8 weeks duration
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_kpi-dashboard.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      KPI dashboard
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-5">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_certificates.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      Certificates for workers
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-3-5">
+                <div class="sustify-working-factor-container">
+                  <div class="sustify-working-factor-image">
+                    <img src="img/sustify_sustiscore.png" alt="Sustify is gamified" />
+                  </div>
+                  <div class="sustify-working-factor-title">
+                    <h4>
+                      <span x-show="!de">SustiScore for factories</span>
+                      <span x-show="de">Score für die Fabrik</span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="imagebg parallax space--lg border hidden-xxs hidden-xs" data-overlay="0" style="width: 100vw;">
+        <div class="background-image-holder">
+          <img alt="background" src="img/tee_plantage_srilanka.jpg" />
+        </div>
+      </section>
+      <section class="imagebg space--lg border hidden-md hidden-sm hidden-lg hidden-xlg" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/tee_plantage_srilanka.jpg" />
+        </div>
+      </section>
+      <div class="container">
+        <section class="text-center space--xxs border" id="benefits">
+          <div class="row course-library-section" id="sustifyCourseLibrary">
+            <div class="col-sm-12 col-md-12">
+              <h2>
+                Course Library
+              </h2>
+              <p class="lead">
+                You can choose from our courses depending on the requirements
+                  of the factory and the focus of your sustainability strategy.
+                  On request content is adaptable to any country, industry or to
+                  specific training needs.
+              </p>
+            </div>
+            <div class="col-md-5 col-md-offset-0 col-sm-10 col-sm-offset-1 pad-right-control display-upto-xs">
+              <div class="container-fluid course-library-viewer-container">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="course-item-title-container active" target="#sustifyCourse1">
+                      <h3 style="float: left;">
+                        Fire safety &#38; hazards
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/sustify-course_building-fire-safety.png" alt="Sustify offers course Firesafety" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                        " />
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="course-item-title-container" target="#sustifyCourse4">
+                      <h3>
+                        Occupational health &#38; hygiene
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/sustify-course_health-hygiene.png" alt="Sustify offers course Health &#38; hygiene" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                        " />
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="course-item-title-container" target="#sustifyCourse2">
+                      <h3>
+                        <span x-show="!de">Labour standards &#38; grievances</span>
+                        <span x-show="de">Arbeitsstandards & Beschwerdemechanismen
+                        </span>
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/labor-standard-icon.svg" alt="Sustify offers course Labour standards &#38; grievances" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius: 50%;
+                        " />
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="course-item-title-container" target="#sustifyCourse6">
+                      <h3>
+                        Energy efficiency &#38; environmental practices
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/energy-efficiency.svg" alt="Understanding types of risks, such as chemical, physical, biological,
+                                            psychological,
+                                            ergonomic and accidental" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius:50%;
+                        " />
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="course-item-title-container" target="#sustifyCourse7">
+                      <h3>
+                        Productivity &#38; lean management
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/productivity-icon.svg" alt="Sustify offers course Productivity &#38; lean management" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius: 50%;
+                        " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-md-offset-0 col-sm-10 col-sm-offset-1 pad-left-control display-upto-xs">
+              <div class="course-library-detail-viewer" id="couseLibraryDetailViewer" style="height: 390px; margin-top: 30px;">
+                <div class="course-detail-item" id="sustifyCourse1">
+                  <div class="course-title">
+                    <h3>
+                      Fire safety &#38; hazards
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                    <span x-show="!de">
+                      <ul class="course-detail-content-list" style="width: 100%;">
+                        <li>
+                          Understanding the key issues in fire safety
+                        </li>
+                        <li>
+                          Understanding the own role and responsibility in fire
+                          safety
+                        </li>
+                        <li>
+                          Understanding types and implications of risks
+                        </li>
+                        <li>
+                          Understanding the different ways of dealing with
+                          hazards
+                        </li>
+                        <li>
+                          Recognizing the own role in decreasing potential for
+                          incidents
+                        </li>
+                      </ul>
+                    </span>
+                    <span x-show="de">
+                      <ul class="course-detail-content-list" style="width: 100%;">
+                        <li>
+                          Bedeutung von Gebäude- und Brandschutz
+                        </li>
+                        <li>
+                          Umgang mit Risiken und Gefahren
+                        </li>
+                        <li>
+                          Eigenes Handlungspotential erkennen
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                </div>
+                <div class="course-detail-item" id="sustifyCourse2">
+                  <div class="course-title">
+                    <h3>
+                      Labour standards &#38; grievances
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                    <span x-show="!de">
+                      <ul class="course-detail-content-list">
+                        <li>The why and how of grievance mechanisms</li>
+                        <li>Understanding and resolving conflicts</li>
+                        <li>
+                          Understanding basic rights and responsibilities of
+                          employers and employees
+                        </li>
+                        <li>
+                          Understanding the meaning, forms and different
+                          approaches to preventing and dealing with
+                          discrimination
+                        </li>
+                        <li>
+                          Methods of peaceful, inclusive and democratic
+                          participation
+                        </li>
+                      </ul>
+                    </span>
+                    <span x-show="de">
+                      <ul class="course-detail-content-list">
+                        <li>Arbeitsrechte und -pflichten</li>
+                        <li>
+                          Bedeutung von Beschwerdemechanismen und deren
+                          Möglichkeiten und Grenzen
+                        </li>
+                        <li>
+                          Diskriminierung verstehen und verhindern
+                        </li>
+                        <li>
+                          Methoden für integrative, konsens-orientierte und
+                          demokratische Partizipation
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                </div>
+                <div class="course-detail-item" id="sustifyCourse3">
+                  <div class="course-title">
+                    <h3>
+                      Overtime &#38;compensation
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                    <span x-show="!de">
+                      <ul class="course-detail-content-list">
+                        <li>
+                          Recruitment, retrenchment, working hours and
+                          compensation mechanisms
+                        </li>
+                        <li>
+                          Understanding living wages, paychecks and underlying
+                          laws
+                        </li>
+                        <li>
+                          Understanding the concept of basic finance management,
+                          calculating basic household incomes and expenses
+                        </li>
+                        <li>Time management and planning</li>
+                      </ul>
+                    </span>
+                    <span x-show="de">
+                      <ul class="course-detail-content-list">
+                        <li>
+                          ___
+                        </li>
+                        <li>
+                          ___
+                        </li>
+                        <li>
+                          ___
+                        </li>
+                        <li>___</li>
+                      </ul>
+                    </span>
+                  </div>
+                </div>
+                <div class="course-detail-item" id="sustifyCourse4">
+                  <div class="course-title">
+                    <h3>
+                      Occupational health &#38; hygiene
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                    <span x-show="!de">
+                      <ul class="course-detail-content-list" style="width: 100%;">
+                        <li>PPE and the reasoning behind</li>
+                        <li>Ergonomics of the workplace</li>
+                        <li>Avoiding contagious deseases</li>
+                        <li>Basic facts about hygiene and its implications</li>
+                        <li>Increasing health awareness</li>
+                      </ul>
+                    </span>
+                    <span x-show="de">
+                      <ul class="course-detail-content-list" style="width: 100%;">
+                        <li>Bedeutung von persönlicher Schutzausrüstung</li>
+                        <li>
+                          Infektionsschutz zur Vermeidung/Eindämmung von
+                          Pandemien wie COVID19
+                        </li>
+                        <li>Hygiene am Arbeitsplatz</li>
+                        <li>Arbeitsplatzergonomie</li>
+                      </ul>
+                    </span>
+                  </div>
+                </div>
+                <div class="course-detail-item" id="sustifyCourse5">
+                  <div class="course-title">
+                    <h3>
+                      <span x-show="!de">Environmental fundamentals &#38;awareness</span>
+                      <span x-show="de">___</span>
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                      <ul class="course-detail-content-list">
+                        <li>
+                          Understanding the basic concept of an ecosystem and
+                          climate change
+                        </li>
+                        <li>
+                          Understanding interactions between own behavior and
+                          the environment
+                        </li>
+                        <li>Applying the knowledge to daily factory routine</li>
+                        <li>
+                          Learning Problem solving capabilities for varying work
+                          related ecological issues
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="course-detail-item" id="sustifyCourse7">
+                  <div class="course-title">
+                    <h3>
+                      Productivity &#38; lean management
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                      <ul class="course-detail-content-list">
+                        <li>
+                          Understanding the meaning of productivity for a
+                          factory and on a personal level
+                        </li>
+                        <li>
+                          Learn about purposes and benefits of using the 5S
+                          tools and get familiar with it
+                        </li>
+                        <li>
+                          Understand how to apply 5S in the working environment
+                        </li>
+                        <li>
+                          Get familiar with Added Value and Non Added Value
+                          definitions
+                        </li>
+                        <li>
+                          Learn the basics of Value Stream Mapping and how Value
+                          stream mapping can improve productivity
+                        </li>
+                        <li>
+                          Learn how to identify, avoid, and remove waste and how
+                          this affects profits and customer satisfaction
+                        </li>
+                        <li>
+                          Learn about the Total productive maintenance (TPM)
+                          concepts and their implementation
+                        </li>
+                        <li>
+                          Understand the practical implementation of TPM tools
+                          and their effects
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+                <!-- code below not in use -->
+                <div class="course-detail-item" id="sustifyCourse6">
+                  <div class="course-title">
+                    <h3>
+                      Energy efficiency &#38; environmental practices
+                    </h3>
+                  </div>
+                  <div class="course-detail-contents">
+                      <ul class="course-detail-content-list" style="width: 100%;">
+                        <li>
+                          The effect of chemicals, water use and energy
+                          consumption on the environment
+                        </li>
+                        <li>
+                          The influence on the factory’s productivity and
+                          working conditions
+                        </li>
+                        <li>Right behavior in dealing with chemicals</li>
+                        <li>
+                          Sustainable practices regarding waste, water and
+                          energy
+                        </li>
+                        <li>
+                          Environmental impact and its implication on climate
+                          change
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 hidden-upto-xs">
+              <div class="panel-group course-lirary-accordion" id="accordion">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="course-item-title-container-mob active collapse" data-toggle="collapse" data-parent="#accordion" href="#sustifyAccordionCourse1">
+                      <h3>
+                        Fire safety &#38; hazards
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/sustify-course_building-fire-safety.png" alt="Sustify offers course Fire/building safety &#38; hazard management" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          margin-right: 9px;
+                        " />
+                    </div>
+                  </div>
+                  <div id="sustifyAccordionCourse1" class="panel-collapse collapse in">
+                    <div class="course-detail-item-mob">
+                      <div class="course-detail-contents">
+                          <ul class="course-detail-content-list">
+                            <li>
+                              Understanding the key issues in building safety
+                              and fire safety
+                            </li>
+                            <li>
+                              Understanding the own role and responsibility in
+                              fire safety
+                            </li>
+                            <li>
+                              Understanding types of risks, such as chemical,
+                              physical, biological, psychological, ergonomic and
+                              accidental
+                            </li>
+                            <li>
+                              Understanding the different ways of dealing with
+                              hazards
+                            </li>
+                            <li>
+                              Recognizing the own role in decreasing potential
+                              for accidents
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="course-item-title-container-mob collapse" data-toggle="collapse" data-parent="#accordion" href="#sustifyAccordionCourse4">
+                      <h3>
+                        Occupational health &#38; hygiene
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/sustify-course_health-hygiene.png" alt="Sustify offers course Health &#38; hygiene" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                        " />
+                    </div>
+                  </div>
+                  <div id="sustifyAccordionCourse4" class="panel-collapse collapse">
+                    <div class="course-detail-item-mob">
+                      <div class="course-detail-contents">
+                          <ul class="course-detail-content-list">
+                            <li>PPE and the reasoning behind</li>
+                            <li>Ergonomics of the workplace</li>
+                            <li>Minimising risks of contagious diseases</li>
+                            <li>
+                              Basic facts about hygiene and its implication in
+                              the daily life
+                            </li>
+                            <li>Increasing health awareness</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="course-item-title-container-mob collapse" data-toggle="collapse" data-parent="#accordion" href="#sustifyAccordionCourse3">
+                      <h3>
+                        Labour standards &#38; grievances
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/labor-standard-icon.svg" alt="Sustify offers course Labour standards &#38; grievances" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius: 50%;
+                        " />
+                    </div>
+                  </div>
+                  <div id="sustifyAccordionCourse3" class="panel-collapse collapse">
+                    <div class="course-detail-item-mob">
+                      <div class="course-detail-contents">
+                          <ul class="course-detail-content-list">
+                            <li>The why and how of grievance mechanisms</li>
+                            <li>Understanding and resolving conflicts</li>
+                            <li>
+                              Understanding basic rights and responsibilities of
+                              employers and employees
+                            </li>
+                            <li>
+                              Understanding the meaning, forms and different
+                              approaches to preventing and dealing with
+                              discrimination
+                            </li>
+                            <li>
+                              Methods of peaceful, inclusive and democratic
+                              participation
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="course-item-title-container-mob collapse collapsed" data-toggle="collapse" data-parent="#accordion" href="#sustifyAccordionCourse7" aria-expanded="false">
+                      <h3>
+                        Productivity &amp; lean management
+                      </h3>
+                      <img class="reduced-size-image reduced-width-image" src="img/productivity-icon.svg" alt="Sustify offers course Productivity &amp; lean management" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius: 50%;
+                        " />
+                    </div>
+                  </div>
+                  <div id="sustifyAccordionCourse7" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="course-detail-item-mob">
+                      <div class="course-title"></div>
+                      <div class="course-detail-contents">
+                          <ul class="course-detail-content-list">
+                            <li>
+                              Understanding the meaning of productivity for a
+                              factory and on a personal level
+                            </li>
+                            <li>
+                              Learn about purposes and benefits of using the 5S
+                              tools and get familiar with it
+                            </li>
+                            <li>
+                              Understand how to apply 5S in the working
+                              environment
+                            </li>
+                            <li>
+                              Get familiar with Added Value and Non Added Value
+                              definitions
+                            </li>
+                            <li>
+                              Learn the basics of Value Stream Mapping and how
+                              Value stream mapping can improve productivity
+                            </li>
+                            <li>
+                              Learn how to identify, avoid, and remove waste and
+                              how this affects profits and customer satisfaction
+                            </li>
+                            <li>
+                              Learn about the Total productive maintenance (TPM)
+                              concepts and their implementation
+                            </li>
+                            <li>
+                              Understand the practical implementation of TPM
+                              tools and their effects
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="course-item-title-container-mob collapse" data-toggle="collapse" data-parent="#accordion" href="#sustifyAccordionCourse6">
+                      <h3>
+                        <span x-show="!de">Chemical, water &#38; energy</span>
+                        <span x-show="de">Energieeffizienz &#38; Umweltpraktiken
+                        </span>
+                      </h3>
+                      <img class="reduced-size-image" src="img/energy-efficiency.svg" alt="Sustify offers course chemical water and energy" style="
+                          float: right;
+                          height: 34px !important;
+                          margin-bottom: 2px;
+                          margin-left: 9px;
+                          border-radius: 50%;
+                        " />
+                    </div>
+                  </div>
+                  <div id="sustifyAccordionCourse6" class="panel-collapse collapse">
+                    <div class="course-detail-item-mob">
+                      <div class="course-icon"></div>
+                      <div class="course-detail-contents">
+                          <ul class="course-detail-content-list">
+                            <li>
+                              The effect of chemicals, water use and energy
+                              consumption on the environment
+                            </li>
+                            <li>
+                              The influence on the factory’s productivity and
+                              working conditions
+                            </li>
+                            <li>Right behaviour in dealing with chemicals</li>
+                            <li>
+                              Sustainable practices regarding water and energy
+                            </li>
+                            <li>Proactive approaches for problem solving</li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <hr class="green-hr" />
+          <div class="row get-demo-section">
+            <div class="col-sm-12 col-md-12">
+              <h2>
+                Product Demo
+              </h2>
+              <p class="lead">
+                Get an impression of how our course "Fire safety &#38;
+                  hazards" looks like!
+              </p>
+              <br />
+            </div>
+
+            <video controls src="img/SUSTIFY%20DEMO%20-%20480%20P.mp4" poster="img/video_poster2.png" style="outline: none; width: 100%;"></video>
+            <div class="col-sm-12 col-md-12">
+              <p class="lead">
+                If you want more detailed informati on, please contact us
+                  at
+                <a href="mailto:sonja.westphal@sustify.de">Sonja.Westphal@sustify.de</a>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="imagebg parallax space--lg border hidden-xxs hidden-xs" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/master.jpg" />
+        </div>
+      </section>
+      <section class="imagebg space--lg border hidden-md hidden-sm hidden-lg hidden-xlg" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/master.jpg" />
+        </div>
+      </section>
+      <section class="team bg--secondary" data-scroll-id="team" id="team">
+        <section class="text-center space--xxs border">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-10 col-md-8">
+                <h2>
+                  Team Sustify
+                </h2>
+                <p class="lead">
+                  Trust and reliability form the basis of how we work
+                    together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- team sustify -->
+        <section class="team space--xxs border">
+          <div class="container">
+            <div class="row">
+              <div class="slider" data-arrows="true" data-timing="false" data-paging="false">
+                <!-- team visible on desktop -->
+                <ul class="slides hidden-xxs hidden-xs" style="padding-left: 5%; padding-right: 5%; margin-top: 1vh;">
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4" style="height: 557px;">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 557px;">
+                            <img alt="Image" src="img/sonja.jpg" style="max-width: 60%;" />
+                            <h4>Sonja Westphal</h4>
+                            <span style="color: #33cc99;">
+                              Founder & CEO
+                            </span>
+                            <p style="margin-top: 1vh;">Consultant for sustainable supply-chain
+                                management, holds an MsC in Marketing and
+                                Product management and an M.A. in Sustainability
+                                and environmental sciences, has worked and lived
+                                in six countries and is a passionate social
+                                entrepreneur.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2" style="height:310px;">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>Experience
+                                </h4>
+                                <p>environmental and sustainability
+                                    management, international business,
+                                    marketing and communications
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2" style="height:310px;">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                Sonja.Westphal@sustify.de
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <br />
+                                    <a href="skype:S.C.Westphal?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://goo.gl/rBPidg" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row likes-container">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Like"></i>
+                                <h4>
+                                  Likes
+                                </h4>
+                                <p>
+                                  rivers and forests, Asian culture, tango,
+                                    value oriented people
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Unlike"></i>
+                                <h4>
+                                  Dislikes
+                                </h4>
+                                <p>
+                                  dubbed movies, skyscrapers,
+                                    dishonesty
+                                  <br />
+                                  <br />
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 510px;">
+                            <img alt="Image" src="img/Steven_circle.png" style="max-width: 60%;" />
+                            <!--desktop-->
+                            <h4>Steven Strehl</h4>
+                            <span style="color: #33cc99;">CTO
+                              </span>
+                            <p style="margin-top: 1vh;">
+                              Software-Engineer and Technology Team Lead with a background in Liguistics and Social Sciences
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  Software development and IT team manager in start-ups, the public sector and non-profit organizations in Switzerland and Germany
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                Steven.Strehl@sustify.de
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <!--<li>
+                                    <br />
+                                    <a href="live:9733eb7cc187c3f4?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>-->
+                                  <li>
+                                    <a href="https://www.linkedin.com/in/steven-strehl-berlin/" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div id="brt" class="feature feature-1 boxed boxed--md boxed--border" style="min-height: 16.2em;">
+                                <i class="icon icon--md icon-Like"></i>
+                                <h4>
+                                  Likes
+                                </h4>
+                                <p>
+                                  Hiking, speaking French, watching Capybaras and empowering people
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="min-height: 16.2em;">
+                                <i class="icon icon--md icon-Unlike"></i>
+                                <h4>
+                                  Dislikes
+                                </h4>
+                                <p>
+                                  Noise, unnecessary packaging, gender inequality
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 487px;">
+                            <img alt="Image" src="img/Elvira_round.png" style="max-width: 60%;" />
+                            <!--desktop-->
+                            <h4>Elvira Hellenpárt</h4>
+                            <span style="color: #33cc99;">UX/UI Designer</span>
+                            <p style="margin-top: 1vh;">
+                              A designer passionate about working on projects that open new perspectives to the world, respecting people and environment.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  Online/social media marketing, user experience and user interface design
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                elvirahellenpart.ux@gmail.com
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <br />
+                                    <a href="live:9733eb7cc187c3f4?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="http://www.linkedin.com/in/elvira-hellenp%C3%A1rt" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div id="brt" class="feature feature-1 boxed boxed--md boxed--border" style="min-height: 14.45em;">
+                                <i class="icon icon--md icon-Like"></i>
+                                <h4>
+                                  Likes
+                                </h4>
+                                <p>
+                                  Sustainable travelling, Latin dance, accessible design
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="min-height: 14.45em;">
+                                <i class="icon icon--md icon-Unlike"></i>
+                                <h4>
+                                  Dislikes
+                                </h4>
+                                <p>
+                                  Plastic pollution, waste of resources
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 505px;">
+                            <img alt="Image" src="img/husam.png" style="max-width: 60%;" />
+                            <!--desktop-->
+                            <h4>Husam Al Dakak</h4>
+                            <span style="color: #33cc99;">Partnerships and strategy</span>
+                            <p style="margin-top: 1vh;">
+                              An economist passionate about social
+                                entrepreneurship with a background in business
+                                and technology
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  International Development and Cooperation,
+                                    Project Management, Tech and Startups.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border sonja-2">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                Husam.Aldakak@sustify.de
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <br />
+                                    <a href="skype:husamdien?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.linkedin.com/in/husam-al-dakak-50991b16/" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div id="brt" class="feature feature-1 boxed boxed--md boxed--border" style="height: 15.55em;">
+                                <i class="icon icon--md icon-Like"></i>
+                                <h4>
+                                  Likes
+                                </h4>
+                                <p>
+                                  Big and impactful visions, languages and
+                                    cultures, bouldering and hiking
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="height: 15.55em;">
+                                <i class="icon icon--md icon-Unlike"></i>
+                                <h4>
+                                  Dislikes
+                                </h4>
+                                <p>
+                                  Big cars, meat and bureaucracy
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div id="ldp" class="feature feature-3 boxed boxed--xlg boxed--border" style="height:510px">
+                            <img alt="Image" src="img/lucia-circle.jpg" style="max-width: 60%;" />
+                            <h4>Lucia Della Putta-Dallara</h4>
+                            <span style="color: #33cc99;">Subject Matter Expert
+                            </span>
+                            <p style="margin-top: 1vh;">
+                              An accomplished industrial technologies and
+                                textile engineer with an entrepreneurial heart.
+                                Has international experience across textile,
+                                automotive and aeronautical industries
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row exp-container">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  product and process design, quality systems
+                                    and audits, lean management, sustainable
+                                    development, textile engineering,
+                                    consulting
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                Lucia.Dellaputta@sustify.de
+                                <br />
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <a href="skype:luciadp67?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://goo.gl/arFSzf" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://twitter.com/LuciaDellaPutta" target="_blank">
+                                      <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="height:216px;">
+                                <i class="icon icon--md icon-Like"></i>
+                                <h4>
+                                  Likes
+                                </h4>
+                                <p>
+                                  creativity, technology, 
+                                    Zen-Yoga
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="height:216px;">
+                                <i class="icon icon--md icon-Unlike"></i>
+                                <h4>
+                                  <span x-show="!de">Dislikes</span>
+                                </h4>
+                                <p>
+                                  hypocrisy, selfishness,
+                                    procrastination
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="padmaja">
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 522px;">
+                            <img alt="Image" src="img/bergson-wang-circle.png" style="max-width: 60%;" />
+                            <h4>Bergson Wang</h4>
+                            <span style="color: #33cc99;">Program Manager China
+                            </span>
+                            <p style="margin-top: 1vh;">
+                              A consultant and facilitator for sustainability and compliance, registered safety engineer in China and a lead auditor of OSHAS18001, majored in occupational hygiene, who likes to combine classroom training with digitalization.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="row exp-container">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  Occupational health and safety, corporate social responsibility, dialogue training with workers and chemical management
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                bergson.wang@hotmail.com
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <br />
+                                    <a href="skype:bergson.wang1?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.linkedin.com/in/bergson-wang-19a85712/" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="#" target="_blank">
+                                      <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="likes-container">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="feature feature-1 boxed boxed--md boxed--border">
+                                  <i class="icon icon--md icon-Like"></i>
+                                  <h4>
+                                    <span x-show="!de">Likes</span>
+                                    <!--<span x-show="de">___</span>-->
+                                  </h4>
+                                  <p>
+                                    Break dance and modern dancing, meeting people of different cultures, problem solving approach
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="feature feature-1 boxed boxed--md boxed--border">
+                                  <i class="icon icon--md icon-Unlike"></i>
+                                  <h4>
+                                    <span x-show="!de">Dislikes</span>
+                                  </h4>
+                                  <p>
+                                    Cockroaches, faking of documents and records in social compliance assessment
+                                  </p>
+                                  <br />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="padmaja">
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border" style="height: 545px;">
+                            <img alt="Image" src="img/jyoti-circle.png" style="max-width: 60%;" />
+                            <h4>Jyoti Palekar</h4>
+                            <span style="color: #33cc99;">Program Manager India
+                            </span>
+                            <p style="margin-top: 1vh;">
+                              Holds a Master of Technology Degree in Environmental Science and Engineering and is passionate about helping factories to become more and more sustainable.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-sm-8" style="min-height:300px">
+                          <div class="row exp-container">
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="min-height:300px">
+                                <i class="icon icon--md icon-Suitcase"></i>
+                                <h4>
+                                  Experience
+                                </h4>
+                                <p>
+                                  Design and engineering of environment protection measures, environmental and social assessments, sustainability strategy, Training and capability development.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="feature feature-1 boxed boxed--md boxed--border" style="min-height:300px">
+                                <i class="icon icon--md icon-Bird-DeliveringLetter"></i>
+                                <h4>
+                                  Connect
+                                </h4>
+                                jyoti.palekar@stepsol.com
+                                <br />
+                                <br />
+                                <ul class="social-list list-inline list--hover text-center">
+                                  <li>
+                                    <br />
+                                    <a href="skype:bergson.wang1?call" target="_blank">
+                                      <i class="socicon socicon-skype icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://www.linkedin.com/in/jyoti-palekar-5b213915/" target="_blank">
+                                      <i class="socicon socicon-linkedin icon icon--xs"></i>
+                                    </a>
+                                  </li>
+                                  <!--<li>
+                                    <a href="#" target="_blank">
+                                      <i class="socicon socicon-twitter icon icon--xs"></i>
+                                    </a>
+                                  </li>-->
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="likes-container">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="feature feature-1 boxed boxed--md boxed--border">
+                                  <i class="icon icon--md icon-Like"></i>
+                                  <h4>
+                                    Likes
+                                  </h4>
+                                  <p>
+                                    Transparency, diversity, holistic approaches
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="feature feature-1 boxed boxed--md boxed--border">
+                                  <i class="icon icon--md icon-Unlike"></i>
+                                  <h4>
+                                    <span x-show="!de">Dislikes</span>
+                                  </h4>
+                                  <p>
+                                    Irresponsible consumption, Pollution, Rigid and bias behavior
+                                  </p>
+                                  <br />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- team visible on mobile -->
+                <ul class="slides team hidden-sm hidden-md hidden-lg hidden-xlg">
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/sonja-fill.jpg" />
+                            <h4>Sonja Westphal</h4>
+                            <span style="color: #33cc99;">Founder & CEO</span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5">
+                                        <span x-show="!de">About</span>
+                                        <span x-show="de">Über sie</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        Consultant for sustainable supply
+                                          chain management, holds an MsC in
+                                          marketing and product management and
+                                          an M.A. in sustainability and
+                                          environmental sciences, has experience
+                                          in the Indian subcontinent and 6 EU
+                                          countries.
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5">Exp</span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              environmental and
+                                                sustainability management,
+                                                international business,
+                                                marketing and
+                                                communications
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5">Likes
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              rivers and forests, Asian
+                                                culture, tango, value oriented
+                                                people
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              dubbed movies, seafood
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5">Connect</span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:sonja.westphal@sustify.de">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>Sonja.Westphal@sustify.de</p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="skype:S.C.Westphal?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>S.C. Westphal</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="https://goo.gl/rBPidg">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>https://goo.gl/rBPidg</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/Steven_square.jpg" />
+                            <h4>Steven Strehl</h4>
+                            <span style="color: #33cc99;">CTO</span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über sie</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">Software-Engineer and Technology Team Lead with a background in Liguistics and Social Sciences</span>
+                                        <span x-show="de">Software-Engineer und Technischer Teamleiter mit einem Hintergrund in Linguistik und Sozialwissenschaft</span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Software development and IT team manager in start-ups, the public sector and non-profit organizations in Switzerland and Germany</span>
+                                              <span x-show="de">Software-Entwickler und Teamleiter in Startups, im öffentlichen Dienst und Non-Profit-Oganisationen in der Schweiz und Deutschland</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Hiking, speaking French, watching Capybaras and empowering people</span>
+                                              <span x-show="de">Wandern, Französisch sprechen, Capybaras beobachten und Menschen empowern</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">Noise, unnecessary packaging, gender inequality</span>
+                                              <span x-show="de">Lärm, überflüssige Verpackung, Geschlechterungerechtigkeit</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:steven.strehl@sustify.de">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>Steven.Strehl@sustify.de</p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <!--<div class="col-sm-4">
+                                        <a href="live:9733eb7cc187c3f4?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>Elvira Hellenpárt</p>
+                                          </div>
+                                        </a>
+                                      </div>-->
+                                      <div class="col-sm-4">
+                                        <a href="https://www.linkedin.com/in/steven-strehl-berlin/">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>Steven Strehl</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/Elvira_square.jpg" />
+                            <h4>Elvira Hellenpárt</h4>
+                            <span style="color: #33cc99;"><span x-show="!de">UX/UI Designer</span>
+                              <span x-show="de">UX/UI Designer
+                              </span></span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über sie</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">A designer passionate about working on projects that open new perspectives to the world, respecting people and environment.
+                                        </span>
+                                        <span x-show="de">Eine Designerin, die begeistert an neuen Lösungen arbeitet, die wirtschaftlich sind und trotzdem Menschen und Umwelt respektieren.
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Online/social media marketing, user experience and user interface design
+                                              </span>
+                                              <span x-show="de">Online/Social Media Marketing, Nutzerverhalten (UX) und Design von Benutzeroberflächen (UI)</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Sustainable travelling, Latin dance, accessible design
+                                              </span>
+                                              <span x-show="de">Nachhaltiges Reisen, lateinamerikanische Tänze, barrierefreies Design</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">Plastic pollution, waste of resources </span>
+                                              <span x-show="de">Plastikverschmutzung, Ressourcenverschwendung</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:elvirahellenpart.ux@gmail.com">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>ElviraHellenpart.ux@gmail.com</p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="live:9733eb7cc187c3f4?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>Elvira Hellenpárt</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href=" http://www.linkedin.com/in/elvira-hellenp%C3%A1rt">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>Elvira Hellenpárt</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/husam-fill.jpg" />
+                            <h4>Husam Al Dakak</h4>
+                            <span style="color: #33cc99;"><span x-show="!de">Social Economist</span>
+                              <span x-show="de">Strategie und Kooperationen
+                              </span></span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über ihn</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">An economist passionate aboout social
+                                          entrepreneurship with a background in
+                                          business and tech.</span>
+                                        <span x-show="de">Ein begeisterter Sozialunternehmer,
+                                          der schon einige Start-ups erfolgreich
+                                          begleitet hat, und eine Brücke
+                                          schlagen will zwischen Nachhaltigkeit
+                                          und Technik.</span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">International Development and
+                                                Cooperation, Project Management,
+                                                Tech and Startups.</span>
+                                              <span x-show="de">Internationale
+                                                Entwicklungszusammenarbeit,
+                                                App-Entwicklung, Scrum/Agiles
+                                                Projektmanagement</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Big and impactful visions,
+                                                languages and cultures,
+                                                bouldering and hiking</span>
+                                              <span x-show="de">Visionen mit Impact, Sprachen
+                                                und Kulturen, Bouldering und
+                                                Wandern</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">Big cars, meat and
+                                                bureaucracy</span>
+                                              <span x-show="de">Große Autos, Fleisch- und
+                                                Fischkonsum, Bürokratie</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:husam.aldakak@sustify.de">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>Husam.Aldakak@sustify.de</p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="skype:husamdien?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>Husam Al Dakak</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="https://www.linkedin.com/in/husam-al-dakak-50991b16/">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>Husam Al Dakak</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/lucia-fill.jpg" />
+                            <h4>Lucia Della Putta-Dallara</h4>
+                            <span style="color: #33cc99;">Subject Matter Expert</span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über sie</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">An accomplished industrial
+                                          technologies and textile engineer with
+                                          an entrepreneurial heart. Has
+                                          international experience across
+                                          textile, automotive and aeronautical
+                                          industries.</span>
+                                        <span x-show="de">Eine Industrieingenieurin, die
+                                          technisches Wissen über
+                                          Produktionsprozesse verbindet mit
+                                          neuen Ansätzen über nachhaltige
+                                          Entwicklung. Sie vereinfacht komplexe
+                                          Zusammenhänge so, dass sie am Ende
+                                          jeder verstehen kann!</span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">product and process design,
+                                                quality systems and audits, lean
+                                                management, sustainable
+                                                development, textile
+                                                engineering, consulting</span>
+                                              <span x-show="de">Produkt- und Prozessdesign,
+                                                Qualitätssysteme und
+                                                Auditierungen, Lean Management,
+                                                Consulting</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">creativity, technology, design,
+                                                detail</span>
+                                              <span x-show="de">Kreativität, Technik,
+                                                Präzision, Zen-Yoga</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">hypocrisy, selfishness,
+                                                procrastination</span>
+                                              <span x-show="de">Scheinheiligkeit, Egoismus,
+                                                Aufschieberitis</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:lucia.dellaputta@sustify.de">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>
+                                              Lucia.Dellaputta@sustify.de
+                                            </p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="skype:luciadp67?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>luciadp67</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="https://goo.gl/arFSzf">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>https://goo.gl/arFSzf</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/bergson-wang-square.jpg" />
+                            <h4>Bergson Wang</h4>
+                            <span style="color: #33cc99;"><span x-show="!de">Program Manager China</span>
+                              <span x-show="de">Program Manager China</span></span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über ihn</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">A consultant and facilitator for sustainability and compliance, registered safety engineer in China and a lead auditor of OSHAS18001, majored in occupational hygiene, who likes to combine classroom training with digitalization.</span>
+                                        <span x-show="de">Consultant und Facilitator für Nachhaltigkeit und Compliance, eingetragener Ingenieur für Arbeitssicherheit in China und Lead Auditor von OSHAS18001 mit dem Schwerpunkt Arbeitssicherheit und - hygiene, der gerne konventionelle Trainings mit Digitalität verbindet.</span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Occupational health and safety, corporate social responsibility, dialogue training with workers and chemical management</span>
+                                              <span x-show="de">Betrieblicher Arbeits- und Gesundheitsschutz, CSR, Dialogtrainings, Chemikalienmanagement.</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Break dance and modern dancing, meeting people of different cultures, problem solving approach</span>
+                                              <span x-show="de">Breakdance und moderner Tanz, Begegnungen mit Menschen verschiedener Kulturen, lösungsorientierte Einstellung</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">Cockroaches, faking of documents and records in social compliance assessment</span>
+                                              <span x-show="de">Kakerlaken, Fälschen von Dokumenten in Sozial- und Umweltaudits</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:bergson.wang@hotmail.com">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>bergson.wang@hotmail.com
+                                            </p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="skype:bergson.wang1?call" target="_blank">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Skype"></i>
+                                            <p>bergson.wang1</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <a href="https://www.linkedin.com/in/bergson-wang-19a85712/">
+                                          <div class="feature feature-3 boxed">
+                                            <i class="icon color--primary icon-Linkedin"></i>
+                                            <p>shorturl.at/bdjGT</p>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="feature feature-3 boxed boxed--xlg boxed--border team-member">
+                            <img alt="Image" src="img/jyoti-square.jpg" />
+                            <h4>Jyoti Palekar</h4>
+                            <span style="color: #33cc99;"><span x-show="!de">Program Manager India</span>
+                              <span x-show="de">Program Manager India</span></span>
+                            <div class="team-member">
+                              <div class="tabs-container text-center" data-content-align="left">
+                                <ul class="tabs">
+                                  <li class="active tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">About</span>
+                                        <span x-show="de">Über ihn</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <p>
+                                        <span x-show="!de">Holds a Master of Technology Degree in Environmental Science & Engineering and has consulting experience of 25 + years in Environment Protection & Sustainability across diverse industry sectors. As a trainer she has experience in behavior-based safety and environment & safety management systems.</span>
+                                        <span x-show="de">Er hat einen Master of Technology in Umweltwissenschaften und -technik und verfügt über mehr als 25 Jahre Beratungserfahrung in Umweltschutz und Nachhaltigkeit in verschiedenen Branchen. Als Trainerin hat sie Erfahrung in verhaltensbasierten Sicherheits- und Umwelt- und Sicherheitsmanagementsystemen.</span>
+                                      </p>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Exp</span>
+                                        <span x-show="de">Erfahrung</span></span>
+                                    </div>
+                                    <div class="tab__content">
+                                      <section class=" ">
+                                        <div class="container text-center">
+                                          <div class="row">
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de">Design and engineering of environment protection measures, Environment & social assessments, sustainability strategy and road maps, Training and capability development.</span>
+                                              <span x-show="de">Entwurf und Entwicklung von Umweltschutzmaßnahmen, Umwelt- und Sozialbewertungen, Nachhaltigkeitsstrategie und Roadmaps, Schulung und Fähigkeitsentwicklung.</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Likes</span>
+                                        <span x-show="de">Mag</span>
+                                      </span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <section class=" ">
+                                        <div class="container">
+                                          <div class="row">
+                                            <i class="icon icon--md icon-Like"></i>
+                                            <p style="margin-top: 1vh;">
+                                              <span x-show="!de"> Transparency, Integrity, Diversity, Nature and Travel, Holistic approach</span>
+                                              <span x-show="de">Transparenz, Integrität, Vielfalt, Natur und Reisen, ganzheitlicher Ansatz</span>
+                                            </p>
+                                            <i class="icon icon--md icon-Unlike"></i>
+                                            <p>
+                                              <span x-show="!de">Irresponsible consumption, Pollution, Rigid and bias behavior</span>
+                                              <span x-show="de">Unverantwortlicher Verbrauch, Verschmutzung, starres und vorgespanntes Verhalten</span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </section>
+                                    </div>
+                                  </li>
+                                  <li class="tab-button">
+                                    <div class="tab__title">
+                                      <span class="h5"><span x-show="!de">Connect</span>
+                                        <span x-show="de">Kontakt</span></span>
+                                    </div>
+                                    <div class="tab__content text-center">
+                                      <div class="col-sm-4">
+                                        <div class="feature feature-3 boxed">
+                                          <a href="mailto:bergson.wang@hotmail.com">
+                                            <i class="icon color--primary icon-Mail"></i>
+                                            <p>jyoti.palekar@stepsol.com</p>
+                                          </a>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="imagebg parallax space--lg border hidden-xxs hidden-xs" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/Factory_Work%201.jpg" />
+        </div>
+      </section>
+      <section class="imagebg space--lg border hidden-md hidden-sm hidden-lg hidden-xlg" data-overlay="2">
+        <div class="background-image-holder">
+          <img alt="background" src="img/Factory_Work 1.jpg" />
+        </div>
+      </section>
+      <section class="switchable space--xxs text-center" id="contact" style="margin-bottom: 1.8vh; padding-top: 0px;">
+        <div class="container">
+          <div class="col-sm-12">
+            <div class="row switchable__text touch" style="margin-top: 0 !important;">
+              <h2 style="padding-top: 1.85714286em;">
+                <span x-show="!de">Get in touch</span>
+                <span x-show="de">Kontaktieren Sie uns! </span>
+              </h2>
+              <p class="lead">
+                <span x-show="!de">We have a great program ready to integrate into your
+                  factories. <br />Let's connect and find the right solution for
+                  you.</span>
+                <span x-show="de">Wir möchten Ihnen dabei helfen, Trainingskonzepte für Ihre
+                  Lieferkette digitaler und wirkungsvoller zu gestalten!</span>
+              </p>
+              <div class="col-sm-4">
+                <div class="feature feature-2 boxed boxed--border">
+                  <i class="icon color--primary icon-Phone-2"></i>
+                  <p>+49 170 3601180</p>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="feature feature-2 boxed boxed--border">
+                  <i class="icon color--primary icon-Mail"></i>
+                  <p>Sonja.Westphal@sustify.de</p>
+                </div>
+              </div>
+              <div class="col-sm-4" style="float: left;">
+                <div class="feature feature-2 boxed boxed--border">
+                  <i class="icon color--primary icon-Skype"></i>
+                  <p>S.C. Westphal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="text-center space--xs footer-5 bg--dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="lead">
+                <span x-show="!de">We have partnered with</span>
+                <span x-show="de">Partner und Kooperationen</span>
+              </p>
+              <div class="row">
+                <div class="col-sm-12" style="margin-top: -21px;">
+                  <a href="http://www.stepsol.com/">
+                    <img class="footer-image" alt="Step Logo: STEP is our local partner for consulting and implementation of the program" src=" img/step footer.png" />
+                  </a>
+                  <br />
+                  <a href="https://www.loening-berlin.de">
+                    <img class="footer-image loning" src="img/löning footer.png" alt="Löning Logo: Löning Human Rights and Responsible Business is a
+                                        consultancy and think-tank specialised in human-rights work." />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <p class="lead">
+                <span x-show="!de">Proud to be a part of</span>
+                <span x-show="de">Darüber freuen wir uns</span>
+              </p>
+              <div class="row">
+                <div class="col-sm-12" style="margin-top: 2px;">
+                  <a href="https://www.volkswagenag.com/en/news/2020/06/incubator_programme.html#">
+                    <div class="circle-border" style="
+                        background: white;
+                        border-radius: 50%;
+                        width: 70px;
+                        height: 70px;
+                        padding-top: 4px;
+                        margin: 0 auto;
+                      ">
+                      <img class="footer-image" src="img/volkswagen_logo.png" alt="volkswagen logo" style="width: 60px;" />
+                    </div>
+                    <p style="margin-top: 7px;">
+                      <span x-show="!de">Incubator Program</span>
+                      <span x-show="de">Incubator Programm</span>
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <p class="lead">
+                <span x-show="!de">We are a member of</span>
+                <span x-show="de">Mitgliedschaften</span>
+              </p>
+              <div class="row">
+                <div class="col-sm-12" style="margin-top: 5px;">
+                  <a href="https://www.maxtex.eu">
+                    <img class="footer-image" src="img/MaxTex.png" alt="Image MaxTex-logo" style="margin-top: -4px;" />
+                  </a>
+                  <br />
+                  <a href="https://www.send-ev.de/">
+                    <img class="send footer-image" alt="Image" src="img/180406_Mitglied_Weiss.png" style="margin-top: 20px;" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="margin-top: 15px; margin-bottom: -20px;">
+                <span class="type--fine-print">
+                  ©
+                  <span class="update-year">2018</span>
+                  Sustify GmbH
+                </span>
+                <a class="type--fine-print" href="privacy.html" target="_self"><span x-show="!de">Privacy</span>
+                  <span x-show="de">Datenschutzerklärung</span></a>
+                <a class="type--fine-print" href="legal-disclosure.html" target="_self"><span x-show="!de">Legal</span>
+                  <span x-show="de">Impressum</span></a>
+                <a class="type--fine-print" href="terms-and-conditions.html" target="_self"><span x-show="!de">Terms & conditions</span>
+                  <span x-show="de">AGB</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+      <a class="back-to-top inner-link hidden-xs hidden-xxs" href="#top" data-scroll-class="100vh:active">
+        <i class="stack-interface stack-up-open-big hidden-xs hidden-xxs"></i>
+      </a>
+    </div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/flickity.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- script for beneficiaries section hover-->
+    <script>
+      // $(window).resize(function(){
+      // do functionality on screens greater than 992px
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        //setting the identifier class to a variable
+        var selectedBeneficiary = ".sustify-beneficiary";
+        //function for displaying content only when clicked
+        $(selectedBeneficiary).on("click", function() {
+          // if ($(this).hasClass('active')){
+          //     $(this).removeClass('active');
+          // } else {
+          $(selectedBeneficiary).removeClass("active");
+          $(this).toggleClass("active");
+          // }
+        });
+        //function for displaying content on hover and clearing the
+        //displayed one if any was previously displayed
+        $(selectedBeneficiary).hover(function() {
+          $(selectedBeneficiary).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      } // do functionality on screens between than 991px and 650px
+      else if (
+        window.matchMedia("(min-width: 650px)").matches &&
+        window.matchMedia("(max-width: 991px)").matches
+      ) {
+        $(document).ready(function() {
+          $(".sustify-beneficiary.beneficiary-retail-brand").addClass("active");
+
+          $(".beneficiary-retail-brand").on("click", function() {
+            $(".sustify-beneficiary").removeClass("active");
+            $(".beneficiary-details-points").removeClass("active");
+            $(this).toggleClass("active");
+            $(
+              ".beneficiary-details-points.beneficiary-retail-brand"
+            ).toggleClass("active");
+          });
+
+          $(".beneficiary-factory-management").on("click", function() {
+            $(".sustify-beneficiary").removeClass("active");
+            $(".beneficiary-details-points").removeClass("active");
+            $(this).toggleClass("active");
+            $(
+              ".beneficiary-details-points.beneficiary-factory-management"
+            ).toggleClass("active");
+          });
+
+          $(".beneficiary-factory-employees").on("click", function() {
+            $(".sustify-beneficiary").removeClass("active");
+            $(".beneficiary-details-points").removeClass("active");
+            $(this).toggleClass("active");
+            $(
+              ".beneficiary-details-points.beneficiary-factory-employees"
+            ).toggleClass("active");
+          });
+        });
+      } else if (window.matchMedia("(max-width: 650px)").matches) {
+        //setting the identifier class to a variable
+        var selectedBeneficiary = ".sustify-beneficiary";
+        //function for displaying content only when clicked
+        $(selectedBeneficiary).on("click", function() {
+          // if ($(this).hasClass('active')){
+          //     $(this).removeClass('active');
+          // } else {
+          if (!$(this).hasClass("active")) {
+            $(selectedBeneficiary).removeClass("active");
+            $(this).toggleClass("active");
+          } // }
+          else if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+          }
+        });
+      }
+      // });
+
+    </script>
+    <!-- script for course library desktop view -->
+    <script>
+      // $(window).resize(function(){
+      // do functionality on screens greater than 650px
+
+      $(".course-detail-item").hide();
+      $("#sustifyCourse1").show();
+      $("#partner-text-container-left").height(
+        $("#partner-text-container-right").height()
+      );
+      // do functionality on screens greater than 650px
+      if (window.matchMedia("(min-width: 650px)").matches) {
+        $(".course-item-title-container").click(function() {
+          var courseDetailId = $(this).attr("target");
+          $(".course-item-title-container").removeClass("active");
+          $(this).toggleClass("active");
+          $(".course-detail-item").hide();
+          $(courseDetailId).show();
+          $(".course-library-detail-viewer").scrollTop("100%");
+        });
+      } // do functionality on screens less than 650px
+      else if (window.matchMedia("(max-width: 649px)").matches) {
+        $(".course-item-title-container-mob").click(function() {
+          $(".course-item-title-container-mob").removeClass("active");
+          $(this).addClass("active");
+        });
+        $(".course-item-title-container").click(function() {
+          var courseDetailId = $(this).attr("target");
+          $(".course-item-title-container").removeClass("active");
+          $(this).toggleClass("active");
+          $(".course-detail-item").hide();
+          $(courseDetailId).show();
+        });
+      }
+
+      document.querySelectorAll(".course-item-title-container").forEach(course =>
+        course.addEventListener("mouseover", () => course.click())
+      );
+
+    </script>
+
+  </body>
+
+</html>
